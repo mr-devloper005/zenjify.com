@@ -154,10 +154,10 @@ function DetailMeta({ post, category, center = false }: { post: SitePost; catego
     <div className={`mt-4 flex flex-wrap items-center gap-x-3 gap-y-1.5 ${center ? 'justify-center' : ''}`}>
       <span className="inline-flex items-center gap-[3px]">
         {[0, 1, 2, 3, 4].map((i) => (
-          <Star key={i} className={`h-[18px] w-[18px] ${i < filled ? 'fill-[var(--tk-accent)] text-[var(--tk-accent)]' : 'fill-[var(--tk-line)] text-[var(--tk-line)]'}`} />
+          <Star key={i} className={`h-[18px] w-[18px] ${i < filled ? 'fill-[var(--slot4-amber)] text-[var(--slot4-amber)]' : 'fill-[var(--tk-line)] text-[var(--tk-line)]'}`} />
         ))}
       </span>
-      <span className="text-sm font-semibold text-[var(--tk-text)]">{rating.toFixed(1)}</span>
+      <span className="text-sm font-bold text-[var(--tk-text)]">{rating.toFixed(1)}</span>
       <span className="text-sm text-[var(--tk-muted)]">{reviewsOf(post)} reviews</span>
       {category ? (
         <>

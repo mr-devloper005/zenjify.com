@@ -9,6 +9,7 @@ import { SITE_CONFIG, type TaskKey } from '@/lib/site-config'
 import type { SitePost } from '@/lib/site-connector'
 import { EditableSiteShell } from '@/editable/shell/EditableSiteShell'
 import { pagesContent } from '@/editable/content/pages.content'
+import { Ads } from '@/lib/ads'
 
 export const revalidate = 3
 
@@ -118,6 +119,10 @@ export default async function SearchPage({ searchParams }: { searchParams?: Prom
             </form>
           </div>
 
+          <div className="mt-8">
+            <Ads slot="header" showLabel eager className="mx-auto w-full max-w-3xl" />
+          </div>
+
           <div className="mt-10 flex flex-wrap items-end justify-between gap-4">
             <div>
               <p className="text-xs font-black uppercase tracking-[0.24em] opacity-50">{results.length} results</p>
@@ -136,6 +141,10 @@ export default async function SearchPage({ searchParams }: { searchParams?: Prom
               <p className="mt-3 text-sm font-semibold opacity-60">Try a different keyword, task type, or category.</p>
             </div>
           )}
+
+          <div className="mt-10">
+            <Ads slot="sidebar" showLabel className="mx-auto w-full max-w-3xl" />
+          </div>
         </section>
       </main>
     </EditableSiteShell>
