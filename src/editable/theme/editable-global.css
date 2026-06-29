@@ -12,7 +12,7 @@
   Do not add data fetching, scripts, or route logic here.
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 /* Per-task display + body typefaces (consumed via task-themes.ts). */
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap');
@@ -25,9 +25,9 @@ body {
 }
 
 .editable-site-root {
-  /* Yelp-style clean sans, used for both display and body. */
-  --editable-font-display: 'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
-  --editable-font-body: 'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  /* Geometric sans: Poppins for display, Plus Jakarta Sans for body. */
+  --editable-font-display: 'Poppins', 'Plus Jakarta Sans', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --editable-font-body: 'Plus Jakarta Sans', 'Poppins', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
   /* Premium easing curve used across every hover + transition. */
   --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
   font-family: var(--editable-font-body);
@@ -115,9 +115,30 @@ body {
 }
 
 .article-content h2 {
-  color: var(--slot4-accent);
+  color: var(--slot4-blue, #134E8E);
 }
 
 .article-content a {
   color: var(--slot4-accent-fill);
+}
+
+/* Brand-ramp gradient text (red → orange → amber). */
+.zen-hot-text {
+  background-image: var(--slot4-hot-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hide horizontal scrollbar on rails while keeping swipe/scroll. */
+.zen-rail {
+  scrollbar-width: none;
+}
+.zen-rail::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tighter geometric display rhythm. */
+.editable-display {
+  font-feature-settings: 'ss01';
 }
